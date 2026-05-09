@@ -1,4 +1,4 @@
-## 1.2.0
+## 2.0.0
 
 - Add `no_std` support using `core` and `alloc` only, and raise the MSRV from Rust 1.34.2 to 1.36.0 (https://github.com/image-rs/color_quant/pull/24)
 - Add `NeuQuant::color_map_alpha` for retrieving the palette alpha channel, useful for PNG `tRNS` chunks (https://github.com/image-rs/color_quant/pull/23)
