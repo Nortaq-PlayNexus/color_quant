@@ -68,7 +68,6 @@ that this copyright notice remain intact.
 //! let indixes: Vec<u8> = data.chunks(4).map(|pix| nq.index_of(pix) as u8).collect();
 //! let color_map = nq.color_map_rgba();
 //! ```
-
 #![forbid(unsafe_code)]
 #![no_std]
 
