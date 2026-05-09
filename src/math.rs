@@ -12,7 +12,7 @@ pub(crate) fn abs(a: f64) -> f64 {
     } else if a.is_sign_negative() {
         -a
     } else {
-        core::f64::NAN
+        f64::NAN
     }
 }
 
