@@ -100,12 +100,8 @@ pub enum ControlFlow {
 }
 
 impl ControlFlow {
-    fn is_break(self) -> bool {
-        if let ControlFlow::Break = self {
-            true
-        } else {
-            false
-        }
+    fn is_break(&self) -> bool {
+        matches!(self, ControlFlow::Break)
     }
 }
 
@@ -146,7 +142,7 @@ impl NeuQuant {
             netindex: vec![0; 256],
             bias: Vec::with_capacity(netsize),
             freq: Vec::with_capacity(netsize),
-            samplefac: samplefac,
+            samplefac,
             netsize: colors,
         };
         this.init(pixels);
@@ -170,7 +166,7 @@ impl NeuQuant {
                 r: tmp,
                 g: tmp,
                 b: tmp,
-                a: a,
+                a,
             });
             self.colormap.push(Color {
                 r: 0,
@@ -325,7 +321,7 @@ impl NeuQuant {
         }
         self.freq[bestpos as usize] += BETA;
         self.bias[bestpos as usize] -= BETAGAMMA;
-        return bestbiaspos;
+        bestbiaspos
     }
 
     /// Main learning loop
@@ -448,7 +444,7 @@ impl NeuQuant {
     }
     /// Search for best matching color
     fn search_netindex(&self, b: u8, g: u8, r: u8, a: u8) -> usize {
-        let mut best_dist = core::i32::MAX;
+        let mut best_dist = i32::MAX;
         let first_guess = self.netindex[g as usize];
         let mut best_pos = first_guess;
         let mut i = best_pos;
