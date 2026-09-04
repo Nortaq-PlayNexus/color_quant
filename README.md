@@ -9,3 +9,8 @@ quantization algorithm by Anthony Dekker.
     let indixes: Vec<u8> = data.chunks(4).map(|pix| nq.index_of(pix) as u8).collect();
     let color_map = nq.color_map_rgba();
 
+
+## Contributing
+
+Thanks for considering contributions! Please run tests via `pytest` or `cargo test` and ensure lint passes (`ruff check .` / `cargo fmt`) before opening a PR. See `CONTRIBUTING.md` if present.
+
