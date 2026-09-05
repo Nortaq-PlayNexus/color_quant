@@ -12,5 +12,11 @@ quantization algorithm by Anthony Dekker.
 
 ## Contributing
 
-Thanks for considering contributions! Please run tests via `pytest` or `cargo test` and ensure lint passes (`ruff check .` / `cargo fmt`) before opening a PR. See `CONTRIBUTING.md` if present.
+Thanks for considering contributions! Before opening a PR, please run the build, tests, and format check:
+
+```bash
+cargo build --verbose         # Build
+cargo test --tests --benches  # Tests
+cargo fmt -- --check          # Format check
+```
 
